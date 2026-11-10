@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Naked City Films — учебная копия</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500&family=Playfair+Display:ital,wght@1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="is-loading">
+
+  <!-- ================= ИНТРО-ВИДЕО ================= -->
+  <div class="welcome" id="welcome">
+    <video class="nc-welcome-video-bg" src="media/video/welcome.mp4" poster="media/images/welcome-poster.jpg" autoplay muted loop playsinline></video>
+    <div id="welcomeCurtain"></div>
+  </div>
+
+  <!-- ================= НАВИГАЦИЯ-КАРТОЧКА ================= -->
+  <div class="navigation-bar" id="navBar">
+    <div id="NCNavInitCurtain"></div>
+    <nav id="NCNav">
+      <div class="nc-nav-bg" id="navBg"></div>
+      <div class="directors-overlay-bg"></div>
+      <div class="directors-slider"><div class="director-slide" data-slide="0"><img src="media/images/lakehouse.jpg" alt=""></div><div class="director-slide" data-slide="1"><img src="media/images/ups.jpg" alt=""></div><div class="director-slide" data-slide="2"><img src="media/images/exceptional.jpg" alt=""></div><div class="director-slide" data-slide="3"><img src="media/images/article-craig.jpg" alt=""></div><div class="director-slide" data-slide="4"><img src="media/images/cargo.jpg" alt=""></div><div class="director-slide" data-slide="5"><img src="media/images/victory.jpg" alt=""></div><div class="director-slide" data-slide="6"><img src="media/images/theland.jpg" alt=""></div><div class="director-slide" data-slide="7"><img src="media/images/powering-bold.jpg" alt=""></div><div class="director-slide" data-slide="8"><img src="media/images/playoffs.jpg" alt=""></div><div class="director-slide" data-slide="9"><img src="media/images/ai-integrated.jpg" alt=""></div><div class="director-slide" data-slide="10"><img src="media/images/vail.jpg" alt=""></div><div class="director-slide" data-slide="11"><img src="media/images/utah.jpg" alt=""></div><div class="director-slide" data-slide="12"><img src="media/images/made-epic.jpg" alt=""></div></div>
+
+      <a href="#" id="NCNavLogo" aria-label="Home page">
+        <svg viewBox="0 0 690 142" fill="none" xmlns="http://www.w3.org/2000/svg" id="NCLogoSVGViewBox"><path d="M92.0303 76.376V0.212891H130.565V141.658H84.3232L38.5352 65.042V141.658H0V0.212891H46.6953L92.0303 76.376Z" fill="#0004eb"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M175.9 76.376L221.235 0.212891H330.908C378.384 0.212891 397.136 35.3475 397.136 69.7402C397.136 104.133 378.384 141.658 330.473 141.658H221.235L202.525 109.924L183.607 141.658H137.365V0.212891H175.9V76.376ZM225.769 70.9355L263.396 134.052V7.81836L225.769 70.9355ZM300.952 105.391H328.295C350.726 105.391 358.188 85.5456 358.188 69.7402C358.188 53.9349 351.815 36.4805 328.73 36.4805H300.952V105.391Z" fill="#0004eb"></path><path id="NCLogoCityText" fill-rule="evenodd" clip-rule="evenodd" d="M690 141.658H403.936V0.212891H690V141.658ZM515.609 12.4531C496.794 12.4533 484.508 25.0829 484.508 44.6719C484.508 64.6904 495.935 76.3748 515.523 76.375C530.902 76.375 541.47 68.6429 544.649 54.8965L526.264 50.7725C525.318 58.0751 521.624 62.0273 515.867 62.0273C507.791 62.0271 502.809 55.4972 502.809 44.5859C502.809 33.4167 507.534 26.7148 515.267 26.7148C521.452 26.715 525.319 30.7539 526.006 38.2285L544.221 34.7051C542.502 20.9585 531.504 12.4531 515.609 12.4531ZM549.884 13.9131V74.915H567.84V13.9131H549.884ZM571.637 13.9131V28.0039H588.562V74.915H606.519V28.0039H623.444V18.3828L641.314 54.123V74.915H659.356V54.123L679.461 13.9131H660.646L651.796 34.6191C651.195 36.0797 650.679 37.7983 650.421 39.6025H650.249C649.991 37.7984 649.476 36.0797 648.875 34.6191L640.025 13.9131H571.637Z" fill="#0004eb"></path><path id="NCLogoCityOverlay" d="M 404 0 H 404 V 142 H 400 404 Z" fill="#0004eb"></path><path id="NCLogoCityOverlayWhite" d="M 404 0 H 404 V 53 H 404 404 Z" fill="#ffffff"></path></svg>
+      </a>
+
+      <div class="nc-scroll-line nc-copy" id="NCNavScrollLine">
+        <div class="nc-scroll-track"><div class="nc-scroll-line-item"><span>scroll down</span><span class="nc-dot"></span></div><div class="nc-scroll-line-item"><span>scroll down</span><span class="nc-dot"></span></div><div class="nc-scroll-line-item"><span>scroll down</span><span class="nc-dot"></span></div><div class="nc-scroll-line-item"><span>scroll down</span><span class="nc-dot"></span></div><div class="nc-scroll-line-item"><span>scroll down</span><span class="nc-dot"></span></div><div class="nc-scroll-line-item"><span>scroll down</span><span class="nc-dot"></span></div><div class="nc-scroll-line-item"><span>scroll down</span><span class="nc-dot"></span></div><div class="nc-scroll-line-item"><span>scroll down</span><span class="nc-dot"></span></div><div class="nc-scroll-line-item"><span>scroll down</span><span class="nc-dot"></span></div><div class="nc-scroll-line-item"><span>scroll down</span><span class="nc-dot"></span></div><div class="nc-scroll-line-item"><span>scroll down</span><span class="nc-dot"></span></div><div class="nc-scroll-line-item"><span>scroll down</span><span class="nc-dot"></span></div><div class="nc-scroll-line-item"><span>scroll down</span><span class="nc-dot"></span></div><div class="nc-scroll-line-item"><span>scroll down</span><span class="nc-dot"></span></div><div class="nc-scroll-line-item"><span>scroll down</span><span class="nc-dot"></span></div><div class="nc-scroll-line-item"><span>scroll down</span><span class="nc-dot"></span></div><div class="nc-scroll-line-item"><span>scroll down</span><span class="nc-dot"></span></div><div class="nc-scroll-line-item"><span>scroll down</span><span class="nc-dot"></span></div><div class="nc-scroll-line-item"><span>scroll down</span><span class="nc-dot"></span></div><div class="nc-scroll-line-item"><span>scroll down</span><span class="nc-dot"></span></div><div class="nc-scroll-line-item"><span>scroll down</span><span class="nc-dot"></span></div><div class="nc-scroll-line-item"><span>scroll down</span><span class="nc-dot"></span></div><div class="nc-scroll-line-item"><span>scroll down</span><span class="nc-dot"></span></div><div class="nc-scroll-line-item"><span>scroll down</span><span class="nc-dot"></span></div></div>
+      </div>
+
+      <div class="navigation-items nc-h3">
+        <div class="navigation-items-side nc-nav-side-left" id="navSideLeft">
+          <div class="navigation-item">
+            <div class="directors-nav" id="talentsBtn">Talents <span class="director-count">13</span></div>
+            <div class="talent-list-holder" id="talentList"><div class="talent-list"><div class="talent-type-title">Directors</div><a href="#" class="director-link" data-slide="0">Ariel Ellis</a><a href="#" class="director-link" data-slide="1">Brent Bonacorso</a><a href="#" class="director-link" data-slide="2">Chris Shimojima</a><a href="#" class="director-link" data-slide="3">Craig Melville</a><a href="#" class="director-link" data-slide="4">David Schmidt</a><a href="#" class="director-link" data-slide="5">Raja Virdi</a><a href="#" class="director-link" data-slide="6">Recx</a><a href="#" class="director-link" data-slide="7">Rory K.McHarg</a><a href="#" class="director-link" data-slide="8">Shomi Patwary</a></div><div class="talent-list"><div class="talent-type-title">Photographers</div><a href="#" class="director-link" data-slide="9">Paul Barbera</a><a href="#" class="director-link" data-slide="10">Jonah Markowitz</a><a href="#" class="director-link" data-slide="11">Jeff Harris</a></div><div class="talent-list"><div class="talent-type-title">Animators</div><a href="#" class="director-link" data-slide="12">Dirty Puppet</a></div></div>
+          </div>
+          <div class="navigation-item"><a href="#studio">Studio</a></div>
+        </div>
+        <div class="navigation-items-side nc-nav-side-right" id="navSideRight">
+          <div class="navigation-item"><a href="#footer">About</a></div>
+          <div class="navigation-item"><a href="#footer">Contact</a></div>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <!-- ================= КОНТЕНТ (плавный скролл) ================= -->
+  <div id="scrollContainer">
+    <div id="scrollableContent">
+
+      <!-- HERO -->
+      <section class="nc-hero" data-theme="light">
+        <div id="homeNavAniSpacing"></div>
+        <div class="container">
+          <div class="hero-section-wrapper row row-bottom">
+            <div class="col-6 col-4-md col-2-sm"></div>
+            <div class="hero-content-line line-1 col-6 col-8-md col-10-sm">
+              <p class="nc-h1 nc-split">We’re Naked City — a New York director-led production company. Built for <span class="nc-hl">collaboration and partnership.</span></p>
+            </div>
+          </div>
+          <div class="row nc-padding-bottom-m">
+            <div class="col-6 col-4-md col-2-sm">
+              <div class="sub-header nc-h3">Smart stories. Bold execution. No shortcuts.</div>
+            </div>
+            <div class="hero-content-line line-2 nc-h1 col-6 col-8-md col-10-sm">
+              <p class="nc-split">Inspired by Jules Dassin’s Naked City, we know a city of eight million holds endless stories. Our job is to <span class="nc-hl">cut through the noise</span> and get to the naked truth.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ФИЛЬМЫ -->
+      <section class="nc-films-section" data-theme="dark">
+        <div class="container">
+          <div class="row">
+        <div class="film-block-wrapper col-6 col-8-md col-12-xs">
+          <a class="film-block" href="#" data-video="media/video/lakehouse.mp4" data-client="Rocket" data-title="The Lakehouse">
+            <div class="film-bg-wrapper" style="aspect-ratio:742/416">
+              <div class="film-bg-inner">
+                <img class="nc-thumb-image" src="media/images/lakehouse.jpg" alt="The Lakehouse" loading="lazy" style="aspect-ratio:742/416">
+              </div>
+              <video class="nc-video-thumb" muted loop playsinline preload="none" poster="media/images/lakehouse.jpg" aria-hidden="true">
+                <source src="media/video/lakehouse.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="film-title-block">
+              <div class="nc-color-blue nc-padding-y-s nc-h2 nc-italic">Rocket</div>
+              <div class="nc-color-white nc-h2">The Lakehouse</div>
+            </div>
+          </a>
+        </div>
+        <div class="film-block-wrapper col-3 col-4-md col-6-xs">
+          <a class="film-block" href="#" data-video="media/video/playoffs.mp4" data-client="New York Knicks" data-title="Playoffs 2024">
+            <div class="film-bg-wrapper" style="aspect-ratio:742/742">
+              <div class="film-bg-inner">
+                <img class="nc-thumb-image" src="media/images/playoffs.jpg" alt="Playoffs 2024" loading="lazy" style="aspect-ratio:742/742">
+              </div>
+              <video class="nc-video-thumb" muted loop playsinline preload="none" poster="media/images/playoffs.jpg" aria-hidden="true">
+                <source src="media/video/playoffs.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="film-title-block">
+              <div class="nc-color-blue nc-padding-y-s nc-h2 nc-italic">New York Knicks</div>
+              <div class="nc-color-white nc-h2">Playoffs 2024</div>
+            </div>
+          </a>
+        </div>
+        <div class="film-block-wrapper col-3 col-4-md col-6-xs">
+          <a class="film-block" href="#" data-video="media/video/ai-integrated.mp4" data-client="Prompt &amp; Purpose" data-title="AI Integrated">
+            <div class="film-bg-wrapper" style="aspect-ratio:742/742">
+              <div class="film-bg-inner">
+                <img class="nc-thumb-image" src="media/images/ai-integrated.jpg" alt="AI Integrated" loading="lazy" style="aspect-ratio:742/742">
+              </div>
+              <video class="nc-video-thumb" muted loop playsinline preload="none" poster="media/images/ai-integrated.jpg" aria-hidden="true">
+                <source src="media/video/ai-integrated.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="film-title-block">
+              <div class="nc-color-blue nc-padding-y-s nc-h2 nc-italic">Prompt &amp; Purpose</div>
+              <div class="nc-color-white nc-h2">AI Integrated</div>
+            </div>
+          </a>
+        </div>
+        <div class="film-block-wrapper col-3 col-4-md col-6-xs">
+          <a class="film-block" href="#" data-video="media/video/exceptional.mp4" data-client="White Plains Hospital" data-title="Exceptional Every Day">
+            <div class="film-bg-wrapper" style="aspect-ratio:742/416">
+              <div class="film-bg-inner">
+                <img class="nc-thumb-image" src="media/images/exceptional.jpg" alt="Exceptional Every Day" loading="lazy" style="aspect-ratio:742/416">
+              </div>
+              <video class="nc-video-thumb" muted loop playsinline preload="none" poster="media/images/exceptional.jpg" aria-hidden="true">
+                <source src="media/video/exceptional.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="film-title-block">
+              <div class="nc-color-blue nc-padding-y-s nc-h2 nc-italic">White Plains Hospital</div>
+              <div class="nc-color-white nc-h2">Exceptional Every Day</div>
+            </div>
+          </a>
+        </div>
+        <div class="film-block-wrapper col-3 col-4-md col-6-xs">
+          <a class="film-block" href="#" data-video="media/video/made-epic.mp4" data-client="Zynga Poker" data-title="Made Epic">
+            <div class="film-bg-wrapper" style="aspect-ratio:1508/1124">
+              <div class="film-bg-inner">
+                <img class="nc-thumb-image" src="media/images/made-epic.jpg" alt="Made Epic" loading="lazy" style="aspect-ratio:1508/1124">
+              </div>
+              <video class="nc-video-thumb" muted loop playsinline preload="none" poster="media/images/made-epic.jpg" aria-hidden="true">
+                <source src="media/video/made-epic.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="film-title-block">
+              <div class="nc-color-blue nc-padding-y-s nc-h2 nc-italic">Zynga Poker</div>
+              <div class="nc-color-white nc-h2">Made Epic</div>
+            </div>
+          </a>
+        </div>
+        <div class="film-block-wrapper col-6 col-8-md col-12-xs">
+          <a class="film-block" href="#" data-video="media/video/ups.mp4" data-client="UPS" data-title="Coco Gauff x Emma Grede">
+            <div class="film-bg-wrapper" style="aspect-ratio:742/416">
+              <div class="film-bg-inner">
+                <img class="nc-thumb-image" src="media/images/ups.jpg" alt="Coco Gauff x Emma Grede" loading="lazy" style="aspect-ratio:742/416">
+              </div>
+              <video class="nc-video-thumb" muted loop playsinline preload="none" poster="media/images/ups.jpg" aria-hidden="true">
+                <source src="media/video/ups.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="film-title-block">
+              <div class="nc-color-blue nc-padding-y-s nc-h2 nc-italic">UPS</div>
+              <div class="nc-color-white nc-h2">Coco Gauff x Emma Grede</div>
+            </div>
+          </a>
+        </div>
+        <div class="film-block-wrapper col-6 col-8-md col-12-xs">
+          <a class="film-block" href="#" data-video="media/video/powering-bold.mp4" data-client="Barclays" data-title="Powering Bold">
+            <div class="film-bg-wrapper" style="aspect-ratio:742/416">
+              <div class="film-bg-inner">
+                <img class="nc-thumb-image" src="media/images/powering-bold.jpg" alt="Powering Bold" loading="lazy" style="aspect-ratio:742/416">
+              </div>
+              <video class="nc-video-thumb" muted loop playsinline preload="none" poster="media/images/powering-bold.jpg" aria-hidden="true">
+                <source src="media/video/powering-bold.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="film-title-block">
+              <div class="nc-color-blue nc-padding-y-s nc-h2 nc-italic">Barclays</div>
+              <div class="nc-color-white nc-h2">Powering Bold</div>
+            </div>
+          </a>
+        </div>
+        <div class="film-block-wrapper col-3 col-4-md col-6-xs">
+          <a class="film-block" href="#" data-video="media/video/vail.mp4" data-client="The Town of Vail" data-title="Life is but a dream">
+            <div class="film-bg-wrapper" style="aspect-ratio:742/742">
+              <div class="film-bg-inner">
+                <img class="nc-thumb-image" src="media/images/vail.jpg" alt="Life is but a dream" loading="lazy" style="aspect-ratio:742/742">
+              </div>
+              <video class="nc-video-thumb" muted loop playsinline preload="none" poster="media/images/vail.jpg" aria-hidden="true">
+                <source src="media/video/vail.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="film-title-block">
+              <div class="nc-color-blue nc-padding-y-s nc-h2 nc-italic">The Town of Vail</div>
+              <div class="nc-color-white nc-h2">Life is but a dream</div>
+            </div>
+          </a>
+        </div>
+        <div class="film-block-wrapper col-3 col-4-md col-6-xs">
+          <a class="film-block" href="#" data-video="media/video/out-of-office.mp4" data-client="Barclays &amp; GM" data-title="Out Of Office Challenge">
+            <div class="film-bg-wrapper" style="aspect-ratio:742/1124">
+              <div class="film-bg-inner">
+                <img class="nc-thumb-image" src="media/images/out-of-office.jpg" alt="Out Of Office Challenge" loading="lazy" style="aspect-ratio:742/1124">
+              </div>
+              <video class="nc-video-thumb" muted loop playsinline preload="none" poster="media/images/out-of-office.jpg" aria-hidden="true">
+                <source src="media/video/out-of-office.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="film-title-block">
+              <div class="nc-color-blue nc-padding-y-s nc-h2 nc-italic">Barclays &amp; GM</div>
+              <div class="nc-color-white nc-h2">Out Of Office Challenge</div>
+            </div>
+          </a>
+        </div>
+        <div class="film-block-wrapper col-6 col-8-md col-12-xs">
+          <a class="film-block" href="#" data-video="media/video/cargo.mp4" data-client="Cathay Pacific" data-title="Cargo Big and Small">
+            <div class="film-bg-wrapper" style="aspect-ratio:742/416">
+              <div class="film-bg-inner">
+                <img class="nc-thumb-image" src="media/images/cargo.jpg" alt="Cargo Big and Small" loading="lazy" style="aspect-ratio:742/416">
+              </div>
+              <video class="nc-video-thumb" muted loop playsinline preload="none" poster="media/images/cargo.jpg" aria-hidden="true">
+                <source src="media/video/cargo.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="film-title-block">
+              <div class="nc-color-blue nc-padding-y-s nc-h2 nc-italic">Cathay Pacific</div>
+              <div class="nc-color-white nc-h2">Cargo Big and Small</div>
+            </div>
+          </a>
+        </div>
+        <div class="film-block-wrapper col-3 col-4-md col-6-xs">
+          <a class="film-block" href="#" data-video="media/video/keep-it-fresh.mp4" data-client="Pure Michigan" data-title="Keep It Fresh">
+            <div class="film-bg-wrapper" style="aspect-ratio:742/416">
+              <div class="film-bg-inner">
+                <img class="nc-thumb-image" src="media/images/keep-it-fresh.jpg" alt="Keep It Fresh" loading="lazy" style="aspect-ratio:742/416">
+              </div>
+              <video class="nc-video-thumb" muted loop playsinline preload="none" poster="media/images/keep-it-fresh.jpg" aria-hidden="true">
+                <source src="media/video/keep-it-fresh.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="film-title-block">
+              <div class="nc-color-blue nc-padding-y-s nc-h2 nc-italic">Pure Michigan</div>
+              <div class="nc-color-white nc-h2">Keep It Fresh</div>
+            </div>
+          </a>
+        </div>
+        <div class="film-block-wrapper col-3 col-4-md col-6-xs">
+          <a class="film-block" href="#" data-video="media/video/utah.mp4" data-client="State of Utah" data-title="Life Elevated">
+            <div class="film-bg-wrapper" style="aspect-ratio:742/742">
+              <div class="film-bg-inner">
+                <img class="nc-thumb-image" src="media/images/utah.jpg" alt="Life Elevated" loading="lazy" style="aspect-ratio:742/742">
+              </div>
+              <video class="nc-video-thumb" muted loop playsinline preload="none" poster="media/images/utah.jpg" aria-hidden="true">
+                <source src="media/video/utah.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="film-title-block">
+              <div class="nc-color-blue nc-padding-y-s nc-h2 nc-italic">State of Utah</div>
+              <div class="nc-color-white nc-h2">Life Elevated</div>
+            </div>
+          </a>
+        </div>
+        <div class="film-block-wrapper col-3 col-4-md col-6-xs">
+          <a class="film-block" href="#" data-video="media/video/victory.mp4" data-client="Mountain Dew" data-title="Victory">
+            <div class="film-bg-wrapper" style="aspect-ratio:1508/1124">
+              <div class="film-bg-inner">
+                <img class="nc-thumb-image" src="media/images/victory.jpg" alt="Victory" loading="lazy" style="aspect-ratio:1508/1124">
+              </div>
+              <video class="nc-video-thumb" muted loop playsinline preload="none" poster="media/images/victory.jpg" aria-hidden="true">
+                <source src="media/video/victory.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="film-title-block">
+              <div class="nc-color-blue nc-padding-y-s nc-h2 nc-italic">Mountain Dew</div>
+              <div class="nc-color-white nc-h2">Victory</div>
+            </div>
+          </a>
+        </div>
+        <div class="film-block-wrapper col-3 col-4-md col-6-xs">
+          <a class="film-block" href="#" data-video="media/video/get-there.mp4" data-client="Synovus" data-title="Get There">
+            <div class="film-bg-wrapper" style="aspect-ratio:742/416">
+              <div class="film-bg-inner">
+                <img class="nc-thumb-image" src="media/images/get-there.jpg" alt="Get There" loading="lazy" style="aspect-ratio:742/416">
+              </div>
+              <video class="nc-video-thumb" muted loop playsinline preload="none" poster="media/images/get-there.jpg" aria-hidden="true">
+                <source src="media/video/get-there.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="film-title-block">
+              <div class="nc-color-blue nc-padding-y-s nc-h2 nc-italic">Synovus</div>
+              <div class="nc-color-white nc-h2">Get There</div>
+            </div>
+          </a>
+        </div>
+        <div class="film-block-wrapper col-6 col-8-md col-12-xs">
+          <a class="film-block" href="#" data-video="media/video/theland.mp4" data-client="Cleveland Cavaliers" data-title="TheLand City Edition">
+            <div class="film-bg-wrapper" style="aspect-ratio:742/416">
+              <div class="film-bg-inner">
+                <img class="nc-thumb-image" src="media/images/theland.jpg" alt="TheLand City Edition" loading="lazy" style="aspect-ratio:742/416">
+              </div>
+              <video class="nc-video-thumb" muted loop playsinline preload="none" poster="media/images/theland.jpg" aria-hidden="true">
+                <source src="media/video/theland.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="film-title-block">
+              <div class="nc-color-blue nc-padding-y-s nc-h2 nc-italic">Cleveland Cavaliers</div>
+              <div class="nc-color-white nc-h2">TheLand City Edition</div>
+            </div>
+          </a>
+        </div>
+        <div class="film-block-wrapper col-3 col-4-md col-6-xs">
+          <a class="film-block" href="#" data-video="media/video/preserve-pit.mp4" data-client="Kingsford Smith" data-title="Preserve The Pit">
+            <div class="film-bg-wrapper" style="aspect-ratio:742/416">
+              <div class="film-bg-inner">
+                <img class="nc-thumb-image" src="media/images/preserve-pit.jpg" alt="Preserve The Pit" loading="lazy" style="aspect-ratio:742/416">
+              </div>
+              <video class="nc-video-thumb" muted loop playsinline preload="none" poster="media/images/preserve-pit.jpg" aria-hidden="true">
+                <source src="media/video/preserve-pit.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="film-title-block">
+              <div class="nc-color-blue nc-padding-y-s nc-h2 nc-italic">Kingsford Smith</div>
+              <div class="nc-color-white nc-h2">Preserve The Pit</div>
+            </div>
+          </a>
+        </div>
+        <div class="film-block-wrapper col-3 col-4-md col-6-xs">
+          <a class="film-block" href="#" data-video="media/video/project-spark.mp4" data-client="Midas" data-title="Project Spark">
+            <div class="film-bg-wrapper" style="aspect-ratio:1508/1124">
+              <div class="film-bg-inner">
+                <img class="nc-thumb-image" src="media/images/project-spark.jpg" alt="Project Spark" loading="lazy" style="aspect-ratio:1508/1124">
+              </div>
+              <video class="nc-video-thumb" muted loop playsinline preload="none" poster="media/images/project-spark.jpg" aria-hidden="true">
+                <source src="media/video/project-spark.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="film-title-block">
+              <div class="nc-color-blue nc-padding-y-s nc-h2 nc-italic">Midas</div>
+              <div class="nc-color-white nc-h2">Project Spark</div>
+            </div>
+          </a>
+        </div>
+        <div class="film-block-wrapper col-3 col-4-md col-6-xs">
+          <a class="film-block" href="#" data-video="media/video/detroit-soul.mp4" data-client="Pepsi" data-title="Full of Detroit Soul">
+            <div class="film-bg-wrapper" style="aspect-ratio:1508/1124">
+              <div class="film-bg-inner">
+                <img class="nc-thumb-image" src="media/images/detroit-soul.jpg" alt="Full of Detroit Soul" loading="lazy" style="aspect-ratio:1508/1124">
+              </div>
+              <video class="nc-video-thumb" muted loop playsinline preload="none" poster="media/images/detroit-soul.jpg" aria-hidden="true">
+                <source src="media/video/detroit-soul.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="film-title-block">
+              <div class="nc-color-blue nc-padding-y-s nc-h2 nc-italic">Pepsi</div>
+              <div class="nc-color-white nc-h2">Full of Detroit Soul</div>
+            </div>
+          </a>
+        </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- СТУДИЯ / СТАТЬИ -->
+      <section class="nc-articles-section" id="studio" data-theme="dark">
+        <div class="container">
+          <div class="articles-row-sm row row-bottom">
+            <div class="col-6 col-4-md col-12-sm nc-h3">The Studio: cultural dispatch, industry pulse.</div>
+            <div class="col-6 col-8-md col-12-sm nc-h1">
+              <p class="nc-split">We share what moves us, what we’re working on, and where we’re headed next.</p>
+            </div>
+          </div>
+        </div>
+        <div class="nc-articles-holder">
+          <div class="nc-articles-wrapper" id="articlesSlider">
+        <a href="#" class="nc-articles-thumbnail">
+          <div class="nc-articles-thumbnail-overlay"></div>
+          <div class="nc-article-wrapper">
+            <div class="article-block-content">
+              <div class="article-block-type nc-h2 nc-italic nc-highlight-blue">Talent</div>
+              <div class="article-block-title nc-h1">In Conversation with Olga Turka</div>
+            </div>
+            <img class="nc-thumb-img" src="media/images/article-olga.jpg" alt="" draggable="false">
+          </div>
+        </a>
+        <a href="#" class="nc-articles-thumbnail">
+          <div class="nc-articles-thumbnail-overlay"></div>
+          <div class="nc-article-wrapper">
+            <div class="article-block-content">
+              <div class="article-block-type nc-h2 nc-italic nc-highlight-blue">Talent</div>
+              <div class="article-block-title nc-h1">In Conversation with Craig Melivlle</div>
+            </div>
+            <img class="nc-thumb-img" src="media/images/article-craig.jpg" alt="" draggable="false">
+          </div>
+        </a>
+        <a href="#" class="nc-articles-thumbnail">
+          <div class="nc-articles-thumbnail-overlay"></div>
+          <div class="nc-article-wrapper">
+            <div class="article-block-content">
+              <div class="article-block-type nc-h2 nc-italic nc-highlight-blue">Special Projects</div>
+              <div class="article-block-title nc-h1">WCS Hudson Canyon</div>
+            </div>
+            <img class="nc-thumb-img" src="media/images/article-wcs.jpg" alt="" draggable="false">
+          </div>
+        </a>
+        <a href="#" class="nc-articles-thumbnail">
+          <div class="nc-articles-thumbnail-overlay"></div>
+          <div class="nc-article-wrapper">
+            <div class="article-block-content">
+              <div class="article-block-type nc-h2 nc-italic nc-highlight-blue">Special Projects</div>
+              <div class="article-block-title nc-h1">Reel Wild Film Festival</div>
+            </div>
+            <img class="nc-thumb-img" src="media/images/keep-it-fresh.jpg" alt="" draggable="false">
+          </div>
+        </a>
+        <a href="#" class="nc-articles-thumbnail">
+          <div class="nc-articles-thumbnail-overlay"></div>
+          <div class="nc-article-wrapper">
+            <div class="article-block-content">
+              <div class="article-block-type nc-h2 nc-italic nc-highlight-blue">Case Study</div>
+              <div class="article-block-title nc-h1">Capturing Real Surprise for Midas’ Project Spark</div>
+            </div>
+            <img class="nc-thumb-img" src="media/images/project-spark.jpg" alt="" draggable="false">
+          </div>
+        </a>
+        <a href="#" class="nc-articles-thumbnail">
+          <div class="nc-articles-thumbnail-overlay"></div>
+          <div class="nc-article-wrapper">
+            <div class="article-block-content">
+              <div class="article-block-type nc-h2 nc-italic nc-highlight-blue">Event Coverage</div>
+              <div class="article-block-title nc-h1">Fan Fest - The Premiere League</div>
+            </div>
+            <img class="nc-thumb-img" src="media/images/playoffs.jpg" alt="" draggable="false">
+          </div>
+        </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ФУТЕР -->
+      <section id="footer">
+        <div class="footer-cta-holder" data-theme="light">
+          <div class="container footer-cta-section">
+            <div class="nc-footer-cta-wrapper">
+              <div class="nc-hxl">
+                <p class="nc-split">Have a story to tell?<br><span class="nc-hl">Let’s Make it Happen.</span></p>
+              </div>
+            </div>
+            <div class="contact-link">
+              <a href="#" class="cta-button">
+                <span class="nc-cta-border"></span>
+                <span class="cta-text nc-h3">Get in touch</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none" class="cta-arrow"><path d="M10 0.787109L20 10.7871M20 10.7871L10 20.7871M20 10.7871L-9.13951e-07 10.7871" stroke="#050516" stroke-width="2"></path></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-ani-wrapper" data-theme="dark">
+          <div class="row row-right footer-links-row">
+            <div class="col-6 show-sm footer-logo-wrapper-sm"><svg width="142" height="398" viewBox="0 0 142 398" fill="none" xmlns="http://www.w3.org/2000/svg" class="footer-logo-sm"><path d="M76.1631 305.105L1.09745e-06 305.105L1.55698e-06 266.57L141.445 266.57L141.445 312.813L64.8291 358.601L141.445 358.601L141.445 397.136L0 397.136L5.56836e-07 350.44L76.1631 305.105Z" fill="#0004EB"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M76.1631 221.235L2.63821e-06 175.9L3.94604e-06 66.2275C4.51219e-06 18.7516 35.1346 3.09366e-05 69.5273 8.29105e-07C103.92 1.23923e-06 141.445 18.7516 141.445 66.6631L141.445 175.9L109.711 194.61L141.445 213.528L141.445 259.771L1.63806e-06 259.771L2.09759e-06 221.235L76.1631 221.235ZM70.7227 171.367L133.839 133.739L7.60547 133.739L70.7227 171.367ZM105.178 96.1836L105.178 68.8408C105.178 46.4095 85.3327 38.9473 69.5273 38.9473C53.722 38.9473 36.2676 45.3207 36.2676 68.4053L36.2676 96.1836L105.178 96.1836Z" fill="#0004EB"></path></svg></div>
+            <div class="footer-links-col">
+              <div class="row">
+                <div class="col-4 col-12-sm">
+                  <a href="#" class="nc-h1 footer-link">Home</a><br>
+                  <a href="#studio" class="nc-h1 footer-link">Studio</a>
+                </div>
+                <div class="col-4 col-12-sm">
+                  <a href="#footer" class="nc-h1 footer-link">About</a><br>
+                  <a href="#footer" class="nc-h1 footer-link">Contact</a>
+                </div>
+                <div class="col-4 col-12-sm">
+                  <a href="#" class="nc-h1 footer-link">Instagram <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none"><path d="M4.57612 10.9235L4.04579 11.4538L5.10645 12.5144L5.63678 11.9841L4.57612 10.9235ZM11.7731 4.78711H12.5231C12.5231 4.5882 12.4441 4.39744 12.3034 4.25678C12.1628 4.11613 11.972 4.03711 11.7731 4.03711V4.78711ZM5.10645 4.03711H4.35645V5.53711H5.10645V4.03711ZM11.0231 11.4538V12.2038H12.5231V11.4538H11.0231ZM1.10645 0.787109V0.0371094H0.356445V0.787109H1.10645ZM16.1064 0.787109H16.8564V0.0371094H16.1064V0.787109ZM16.1064 15.7871V16.5371H16.8564V15.7871H16.1064ZM1.10645 15.7871H0.356445V16.5371H1.10645V15.7871ZM5.10645 11.4538L5.63678 11.9841L12.3034 5.31744L11.7731 4.78711L11.2428 4.25678L4.57612 10.9235L5.10645 11.4538ZM5.10645 4.78711V5.53711H11.7731V4.78711V4.03711H5.10645V4.78711ZM11.7731 4.78711H11.0231L11.0231 11.4538H11.7731H12.5231L12.5231 4.78711H11.7731ZM1.10645 0.787109V1.53711H16.1064V0.787109V0.0371094H1.10645V0.787109ZM16.1064 0.787109H15.3564V15.7871H16.1064H16.8564V0.787109H16.1064ZM16.1064 15.7871V15.0371H1.10645V15.7871V16.5371H16.1064V15.7871ZM1.10645 15.7871H1.85645V0.787109H1.10645H0.356445V15.7871H1.10645Z" fill="#0004EB"></path></svg></a><br>
+                  <a href="#" class="nc-h1 footer-link">LinkedIn <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none"><path d="M4.57612 10.9235L4.04579 11.4538L5.10645 12.5144L5.63678 11.9841L4.57612 10.9235ZM11.7731 4.78711H12.5231C12.5231 4.5882 12.4441 4.39744 12.3034 4.25678C12.1628 4.11613 11.972 4.03711 11.7731 4.03711V4.78711ZM5.10645 4.03711H4.35645V5.53711H5.10645V4.03711ZM11.0231 11.4538V12.2038H12.5231V11.4538H11.0231ZM1.10645 0.787109V0.0371094H0.356445V0.787109H1.10645ZM16.1064 0.787109H16.8564V0.0371094H16.1064V0.787109ZM16.1064 15.7871V16.5371H16.8564V15.7871H16.1064ZM1.10645 15.7871H0.356445V16.5371H1.10645V15.7871ZM5.10645 11.4538L5.63678 11.9841L12.3034 5.31744L11.7731 4.78711L11.2428 4.25678L4.57612 10.9235L5.10645 11.4538ZM5.10645 4.78711V5.53711H11.7731V4.78711V4.03711H5.10645V4.78711ZM11.7731 4.78711H11.0231L11.0231 11.4538H11.7731H12.5231L12.5231 4.78711H11.7731ZM1.10645 0.787109V1.53711H16.1064V0.787109V0.0371094H1.10645V0.787109ZM16.1064 0.787109H15.3564V15.7871H16.1064H16.8564V0.787109H16.1064ZM16.1064 15.7871V15.0371H1.10645V15.7871V16.5371H16.1064V15.7871ZM1.10645 15.7871H1.85645V0.787109H1.10645H0.356445V15.7871H1.10645Z" fill="#0004EB"></path></svg></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer-logo-section">
+            <svg id="NCFooterLogo" class="footer-logo hide-sm" viewBox="0 0 1520 143" xmlns="http://www.w3.org/2000/svg">
+            <defs><clipPath id="nc-logo-clip"><path d="M92.0303 76.9502V0.787109H130.565V142.232H84.3232L38.5352 65.6162V142.232H0V0.787109H46.6953L92.0303 76.9502Z"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M175.9 76.9502L221.235 0.787109H330.908C378.384 0.787109 397.136 35.9218 397.136 70.3145C397.136 104.707 378.384 142.232 330.473 142.232H221.235L202.525 110.498L183.607 142.232H137.365V0.787109H175.9V76.9502ZM225.769 71.5098L263.396 134.626V8.39258L225.769 71.5098ZM300.952 105.965H328.295C350.726 105.965 358.188 86.1198 358.188 70.3145C358.188 54.5091 351.815 37.0547 328.73 37.0547H300.952V105.965Z"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M1520 142.232H403.936V0.787109H1520V142.232ZM1345.61 13.0273C1326.79 13.0276 1314.51 25.6571 1314.51 45.2461C1314.51 65.2646 1325.93 76.949 1345.52 76.9492C1360.9 76.9492 1371.47 69.2171 1374.65 55.4707L1356.26 51.3467C1355.32 58.6494 1351.62 62.6016 1345.87 62.6016C1337.79 62.6013 1332.81 56.0715 1332.81 45.1602C1332.81 33.9909 1337.53 27.2891 1345.27 27.2891C1351.45 27.2892 1355.32 31.3281 1356.01 38.8027L1374.22 35.2793C1372.5 21.5327 1361.5 13.0273 1345.61 13.0273ZM1379.88 14.4873V75.4893H1397.84V14.4873H1379.88ZM1401.64 14.4873V28.5781H1418.56V75.4893H1436.52V28.5781H1453.44V18.957L1471.31 54.6973V75.4893H1489.36V54.6973L1509.46 14.4873H1490.65L1481.8 35.1934C1481.19 36.6539 1480.68 38.3725 1480.42 40.1768H1480.25C1479.99 38.3726 1479.48 36.6539 1478.88 35.1934L1470.03 14.4873H1401.64Z"></path></clipPath></defs>
+            <g clip-path="url(#nc-logo-clip)">
+              <rect width="1520" height="143" fill="#0004EB"></rect>
+              <g id="footerTrail"></g>
+            </g>
+          </svg>
+          </div>
+
+          <div class="footer-bottom-line">
+            <div>
+              <a href="#" class="f-bottom-link">Terms &amp; conditions</a>
+              <a href="#" class="f-bottom-link">Privacy Policy</a>
+            </div>
+            <div>
+              <span>All Rights Reserved © NKD CITY 2026. </span>
+              <span>Учебная копия — дизайн оригинала: SavoirFaire© &amp; 783Studio</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- ================= ВИДЕОПЛЕЕР ================= -->
+  <div class="nc-video-player" id="player">
+    <video id="playerVideo" playsinline loop></video>
+    <div class="nc-film-info-bar">
+      <div>
+        <div class="nc-h2 nc-italic nc-color-blue" id="playerClient"></div>
+        <div class="nc-h2" id="playerTitle"></div>
+      </div>
+      <div class="player-progress" id="playerProgress"><div class="player-progress-fill" id="playerFill"></div></div>
+      <button class="nc-close nc-h3" id="playerClose"><span>Close</span><svg class="nc-video-close" width="47" height="47" viewBox="0 0 47 47" fill="none" xmlns="http://www.w3.org/2000/svg"><path class="nc-close-path-1" d="M0.707031 0.714104L45.9619 45.9689" stroke="white" stroke-width="2"></path><path class="nc-close-path-2" d="M0.707035 45.9619L45.9619 0.707031" stroke="white" stroke-width="2"></path></svg></button>
+    </div>
+  </div>
+
+  <!-- ================= СКРИНСЕЙВЕР ================= -->
+  <div id="NCScreenSaver">
+    <div id="NCLogoScreenSaver"></div>
+  </div>
+
+  <!-- ================= КУРСОР ================= -->
+  <div id="uniqueCursor">←→</div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

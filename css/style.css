@@ -1,0 +1,391 @@
+/* =========================================================
+   Naked City Films — учебная копия
+   Значения (цвета, размеры, отступы) взяты из CSS оригинала.
+   ========================================================= */
+
+/* ---------- Шрифты ----------
+   Оригинал использует Neue Haas Grotesk Medium и TRJN DaVinci Medium Italic.
+   Если у вас есть эти файлы — положите их в папку /fonts с такими именами,
+   иначе подхватятся близкие аналоги с Google Fonts (Inter Tight / Playfair Display). */
+@font-face {
+  font-family: "Haas Grotesk Medium";
+  font-weight: 500;
+  font-display: swap;
+  src: local("Neue Haas Grotesk Display Pro 65 Medium"), url("../fonts/NeueHaasGroteskMedium.otf") format("opentype");
+}
+@font-face {
+  font-family: "DaVinci Medium Italic";
+  font-weight: 500;
+  font-display: swap;
+  src: url("../fonts/TRJNDaVinci-Medium-Italic-Trial.otf") format("opentype");
+}
+
+:root {
+  --white: #fff;
+  --blue: #0004eb;
+  --black: #050516;
+  --grey-light: #e6e6e6;
+  --grey-dark: #979797;
+
+  --font-main: "Haas Grotesk Medium", "Inter Tight", "Helvetica Neue", Arial, sans-serif;
+  --font-italic: "DaVinci Medium Italic", "Playfair Display", Georgia, serif;
+  --ease-out: cubic-bezier(.19, 1, .22, 1);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  background-color: var(--grey-dark);
+  color: var(--white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
+  text-rendering: optimizeLegibility;
+  overscroll-behavior-y: contain;
+}
+
+body {
+  font-family: var(--font-main);
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -.01em;
+  line-height: 100%;
+  overscroll-behavior-y: contain;
+}
+body.is-loading { overflow: hidden; }
+
+a { color: inherit; text-decoration: none; }
+img, video, svg { display: block; }
+
+/* ---------- Типографика ---------- */
+.nc-hxl { font-size: 68px; letter-spacing: -.03em; line-height: 110%; text-transform: capitalize; }
+.nc-h1  { font-size: 44px; letter-spacing: -.03em; line-height: 110%; }
+.nc-h2  { font-size: 26px; letter-spacing: -.03em; line-height: 110%; }
+.nc-h3  { font-size: 18px; letter-spacing: -.01em; line-height: 120%; }
+.nc-copy { font-size: 16px; }
+.nc-italic { font-family: var(--font-italic); font-style: italic; font-weight: 500; letter-spacing: -.02em; }
+
+@media (max-width: 1024px) { .nc-hxl { font-size: 54px; } .nc-h1 { font-size: 34px; } }
+@media (max-width: 769px) {
+  body, .nc-copy { font-size: 14px; }
+  .nc-hxl { font-size: 44px; } .nc-h1 { font-size: 28px; }
+  .nc-h2, .nc-h3 { font-size: 16px; }
+}
+
+/* ---------- Цвета ---------- */
+.nc-bg-blue { background: var(--blue); color: var(--white); }
+.nc-bg-black { background: var(--black); }
+.nc-bg-grey-l { background: var(--grey-light); }
+.nc-bg-grey-d { background: var(--grey-dark); }
+.nc-color-white { color: var(--white); }
+.nc-color-black { color: var(--black); }
+.nc-color-blue { color: var(--blue); }
+.nc-color-grey { color: var(--grey-dark); }
+.nc-highlight-blue { background: var(--blue); color: var(--white); }
+
+/* ---------- Сетка (12 колонок, как в оригинале) ---------- */
+.container { max-width: 2400px; margin: 0 auto; padding: 0 40px; }
+.row { display: grid; grid-template-columns: repeat(12, 1fr); column-gap: 12px; }
+.row-bottom { align-items: flex-end; }
+.row-right { justify-content: end; }
+.col-3 { grid-column: span 3; } .col-4 { grid-column: span 4; }
+.col-6 { grid-column: span 6; } .col-12 { grid-column: span 12; }
+@media (max-width: 1024px) {
+  .col-4-md { grid-column: span 4; } .col-8-md { grid-column: span 8; }
+}
+@media (max-width: 769px) {
+  .container { padding: 0 20px; }
+  .row { column-gap: 6px; }
+  .col-12-sm { grid-column: span 12; } .col-2-sm { grid-column: span 2; } .col-10-sm { grid-column: span 10; }
+  .col-6-sm { grid-column: span 6; }
+}
+@media (max-width: 551px) {
+  .col-12-xs { grid-column: span 12; } .col-6-xs { grid-column: span 6; }
+}
+.hide-sm { display: block; } .show-sm { display: none; }
+@media (max-width: 768px) { .hide-sm { display: none; } .show-sm { display: block; } }
+
+/* =========================================================
+   ИНТРО: видео на весь экран + серая «карточка» с логотипом
+   ========================================================= */
+.welcome {
+  position: fixed; inset: 0; z-index: 2; overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+}
+.welcome.is-hidden { visibility: hidden; }
+.nc-welcome-video-bg {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; pointer-events: none; z-index: 1;
+}
+#welcomeCurtain {
+  position: fixed; top: 0; right: 0; width: 100vw; height: 100lvh; z-index: 2;
+  background: var(--grey-dark);
+}
+
+/* Карточка навигации. Позицию/размер в процессе скролла задаёт JS. */
+.navigation-bar {
+  position: fixed; z-index: 5;
+  left: 0; right: 0; margin: 0 auto;
+  top: calc(50% - 15px); transform: translateY(-50%);
+  width: 50%; min-width: 754px;
+  height: 70vh; min-height: 460px;
+  display: flex; pointer-events: none;
+}
+.navigation-bar.is-js { transform: none; margin: 0; min-width: 0; min-height: 0; right: auto; }
+
+#NCNavInitCurtain { position: absolute; top: 0; left: 0; height: 100%; width: 0; z-index: 10; background: var(--blue); }
+
+#NCNav { position: relative; width: 100%; height: 100%; opacity: 0; z-index: 2; color: var(--blue); }
+.nc-nav-bg { position: absolute; inset: 0; z-index: -1; background: var(--grey-light); }
+
+/* Логотип */
+#NCNavLogo {
+  position: absolute; left: 40px; bottom: 70px;
+  width: calc(100% - 80px); pointer-events: auto; display: block;
+}
+#NCNavLogo svg { width: 100%; height: auto; overflow: visible; }
+#NCNavLogo path { transition: fill .35s ease; }
+
+/* Бегущая строка «scroll down» */
+.nc-scroll-line {
+  position: absolute; left: 0; bottom: 0; width: 100%; height: 30px;
+  overflow: hidden; white-space: nowrap; pointer-events: none;
+  background: var(--blue);
+}
+.nc-scroll-track { display: flex; width: max-content; animation: marquee 18s linear infinite; }
+.nc-scroll-line-item {
+  display: flex; align-items: center; gap: 0 22px; padding-right: 22px;
+  height: 30px; font-size: 13px; color: var(--grey-dark);
+}
+.nc-dot { width: 2px; height: 2px; background: var(--grey-dark); display: inline-block; }
+@keyframes marquee { to { transform: translateX(-50%); } }
+
+/* Пункты меню */
+.navigation-items { display: flex; justify-content: space-between; width: 100%; }
+.navigation-items-side {
+  display: flex; justify-content: space-between; width: 50%; padding-top: 30px;
+}
+.nc-nav-side-left { padding-left: 40px; padding-right: 85px; }
+.nc-nav-side-right { padding-left: 85px; padding-right: 40px; }
+.navigation-item { line-height: 20px; position: relative; }
+.navigation-item > a, .directors-nav { pointer-events: auto; display: inline-block; transition: color .35s ease, opacity .35s; }
+.navigation-item > a:hover, .directors-nav:hover { color: var(--grey-dark) !important; }
+
+.directors-nav { position: relative; cursor: pointer; white-space: nowrap; }
+.directors-nav .director-count { position: absolute; top: -6px; right: -14px; font-size: 12px; }
+
+/* Выпадающий список Talents */
+.talent-list-holder {
+  position: absolute; top: 34px; left: 0; display: flex; gap: 80px;
+  pointer-events: none; visibility: hidden; color: var(--white);
+}
+.talent-list-holder.show { pointer-events: auto; visibility: visible; }
+.talent-list { min-width: 160px; }
+.talent-type-title, .director-link {
+  display: block; padding-bottom: 12px; opacity: 0; transform: translateY(10px);
+  transition: opacity .45s var(--ease-out), transform .45s var(--ease-out), color .3s;
+}
+.talent-type-title { margin-bottom: 6px; color: var(--grey-dark); }
+.director-link { color: var(--white); }
+.director-link:hover { color: var(--grey-dark); }
+.talent-list-holder.show .talent-type-title,
+.talent-list-holder.show .director-link { opacity: 1; transform: none; }
+
+/* Синий фон-оверлей карточки при открытом Talents + картинки режиссёров */
+.directors-overlay-bg {
+  position: absolute; inset: 0; z-index: -1; background: var(--blue);
+  opacity: 0; transition: opacity .4s ease;
+}
+.nav-talents-open .directors-overlay-bg { opacity: 1; }
+.nav-talents-open #NCNav { color: var(--white) !important; }
+.nav-talents-open #NCNavLogo { opacity: 0; }
+#NCNavLogo { transition: opacity .3s; }
+.directors-slider { position: absolute; right: 40px; bottom: 40px; width: 400px; height: 225px; pointer-events: none; }
+.director-slide { position: absolute; inset: 0; overflow: hidden; clip-path: inset(100% 0 0 0); transition: clip-path .7s var(--ease-out); }
+.director-slide.active { clip-path: inset(0 0 0 0); }
+.director-slide img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.15); transition: transform 1.2s var(--ease-out); }
+.director-slide.active img { transform: scale(1); }
+
+/* Цвет шапки над тёмными секциями */
+.navigation-bar.theme-dark #NCNav { color: var(--white); }
+.navigation-bar.theme-dark #NCNavLogo path:not(#NCLogoCityText) { fill: var(--white); }
+.navigation-bar.theme-dark #NCNavLogo #NCLogoCityText { fill: var(--white); }
+
+/* =========================================================
+   Плавный скролл: контент фиксирован и двигается через transform
+   ========================================================= */
+#scrollContainer { position: fixed; inset: 0; overflow: hidden; }
+#scrollableContent { will-change: transform; }
+.no-smooth #scrollContainer { position: static; overflow: visible; }
+
+/* ---------- HERO ---------- */
+.nc-hero { overflow: hidden; width: 100%; background: var(--grey-light); color: var(--blue); }
+#homeNavAniSpacing { height: 80vh; }
+.hero-section-wrapper { position: relative; width: 100%; height: calc(100lvh - 40px); }
+.hero-content-line.line-2 { margin-top: 40px; }
+.sub-header { position: relative; height: 100%; margin-top: -40px; }
+.nc-padding-bottom-m { padding-bottom: 40px; }
+@media (max-width: 769px) { .hero-section-wrapper { height: 600px; } #homeNavAniSpacing { height: 700px; } }
+
+/* ---------- Анимация строк текста ---------- */
+.nc-split { visibility: hidden; }
+.nc-split.is-ready { visibility: visible; }
+.nc-text-line {
+  display: block; position: relative; line-height: 1.2;
+  opacity: 0; transform: translateY(20px);
+  transition: opacity 1s var(--ease-out), transform 1s var(--ease-out);
+}
+.is-inview .nc-text-line { opacity: 1; transform: none; }
+
+/* Подсветка: синяя плашка растёт по ширине, потом «проявляется» текст */
+.nc-highlight { position: relative; display: inline-block; isolation: isolate; margin: 0 2px; }
+.nc-high-grey, .nc-high-blue {
+  position: absolute; top: 0; bottom: 0; left: 0; width: 0; z-index: 0;
+  transition: width .7s cubic-bezier(.65,0,.35,1);
+}
+.nc-high-grey { background: var(--grey-dark); }
+.nc-high-blue { background: var(--blue); transition-duration: .8s; }
+.is-inview .nc-high-grey { width: 100%; }
+.nc-text-ani {
+  position: relative; z-index: 1; display: inline-block; padding: 0 3px;
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(var(--grey-light), var(--grey-light));
+  background-repeat: no-repeat; background-size: 0 100%;
+  transition: background-size .8s cubic-bezier(.65,0,.35,1);
+}
+.nc-highlight-inverted .nc-high-blue { background: var(--white); }
+.nc-highlight-inverted .nc-text-ani { background-image: linear-gradient(var(--blue), var(--blue)); }
+.is-inview .nc-high-blue { width: 100%; }
+.is-inview .nc-text-ani { background-size: 100% 100%; }
+
+/* ---------- ФИЛЬМЫ ---------- */
+.nc-films-section { background: var(--black); color: var(--white); padding: 120px 0 40px; }
+.film-block-wrapper { position: relative; min-height: 550px; }
+.film-block { position: relative; display: block; width: 100%; padding-bottom: 70px; cursor: pointer; }
+.film-bg-wrapper { position: relative; width: 100%; overflow: hidden; background: #0d0d22; }
+.film-bg-inner { transform-origin: 50% 50%; will-change: transform; }
+.nc-thumb-image { width: 100%; height: 100%; object-fit: cover; transition: transform 1.4s var(--ease-out); }
+.nc-video-thumb {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+  opacity: 0; pointer-events: none; z-index: 1;
+}
+.show-video .nc-video-thumb { opacity: 1; }
+/* шторка и пиксельный шум при наведении */
+.film-curtain { position: absolute; top: 0; bottom: 0; left: 0; width: 0; background: var(--blue); z-index: 3; pointer-events: none; }
+.film-noise { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 2; pointer-events: none; opacity: 0; image-rendering: pixelated; }
+.film-title-block { word-break: break-word; }
+.nc-padding-y-s { padding: 12px 0; }
+@media (max-width: 769px) { .film-block-wrapper { min-height: auto; } }
+
+/* ---------- СТАТЬИ (горизонтальный слайдер) ---------- */
+.nc-articles-section { background: var(--blue); color: var(--white); }
+.articles-row-sm { padding-top: 315px; padding-bottom: 40px; }
+.nc-articles-holder { padding-bottom: 255px; }
+.nc-articles-wrapper {
+  display: flex; overflow-x: auto; overflow-y: hidden; cursor: grab;
+  user-select: none; -webkit-user-select: none; scrollbar-width: none;
+}
+.nc-articles-wrapper::-webkit-scrollbar { display: none; }
+.nc-articles-wrapper.articles-dragging { cursor: grabbing; }
+.nc-articles-wrapper.articles-dragging a { pointer-events: none; }
+.nc-articles-thumbnail { flex: 0 0 31vw; margin-right: 12px; position: relative; display: block; }
+.nc-articles-thumbnail:first-child { margin-left: 40px; }
+.nc-articles-thumbnail:last-child { margin-right: 40px; }
+.nc-article-wrapper { position: relative; height: 645px; overflow: hidden; background: var(--black); }
+.nc-thumb-img {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;
+  transition: transform 1.2s var(--ease-out); -webkit-user-drag: none;
+}
+.nc-articles-thumbnail:hover .nc-thumb-img { transform: scale(1.05); }
+.article-block-content { position: absolute; left: 20px; bottom: 20px; right: 12px; z-index: 2; }
+.article-block-type { display: inline-block; margin-bottom: 12px; padding: 0 3px; }
+.nc-articles-thumbnail-overlay {
+  position: absolute; top: 0; bottom: 0; left: 0; width: 100%; z-index: 5;
+  background: var(--grey-dark); transform-origin: right center;
+  transition: transform 1s var(--ease-out);
+}
+.nc-articles-thumbnail.is-inview .nc-articles-thumbnail-overlay { transform: scaleX(0); }
+@media (max-width: 769px) { .nc-articles-thumbnail { flex-basis: 261px; } .nc-article-wrapper { height: 420px; } .articles-row-sm { padding-top: 160px; } }
+
+/* ---------- ФУТЕР ---------- */
+#footer { background: var(--black); color: var(--blue); padding-bottom: 12px; }
+#footer a { color: var(--blue); }
+.footer-cta-section { position: relative; background: var(--grey-light); }
+.footer-cta-holder { background: var(--grey-light); }
+.nc-footer-cta-wrapper .nc-hxl { padding: 315px 0 70px; }
+.contact-link { position: absolute; right: 40px; bottom: 40px; }
+.cta-button { position: relative; display: block; width: 262px; color: var(--black) !important; }
+.cta-text { display: block; padding: 0 25px 20px 0; }
+.nc-cta-border { position: absolute; left: 0; bottom: 0; width: 100%; height: 2px; background: var(--black); transform-origin: right; }
+.cta-button:hover .nc-cta-border { animation: borderSwap .9s var(--ease-out); }
+@keyframes borderSwap {
+  0% { transform: scaleX(1); transform-origin: right; }
+  45% { transform: scaleX(0); transform-origin: right; }
+  46% { transform: scaleX(0); transform-origin: left; }
+  100% { transform: scaleX(1); transform-origin: left; }
+}
+.cta-arrow { position: absolute; right: 0; top: -2px; transition: transform .5s var(--ease-out); }
+.cta-button:hover .cta-arrow { transform: translateX(6px); }
+
+.footer-ani-wrapper { overflow: hidden; padding: 0 50px 12px; }
+.footer-links-row { padding: 70px 0; }
+.footer-link { position: relative; display: inline-block; margin-bottom: 12px; transition: color .35s ease; }
+.footer-link:hover { color: var(--grey-dark) !important; }
+.footer-link svg { position: absolute; right: -24px; top: 2px; width: 17px; }
+.footer-logo { width: 100%; height: auto; cursor: none; }
+.footer-bottom-line { display: flex; justify-content: space-between; margin: 12px 0; font-size: 16px; }
+.footer-bottom-line a { text-decoration: underline; }
+.footer-bottom-line a:hover { color: var(--grey-dark) !important; }
+.f-bottom-link { padding-right: 40px; }
+@media (max-width: 769px) {
+  .contact-link { position: relative; right: 0; bottom: 0; padding: 20px 0 40px; }
+  .footer-bottom-line { flex-direction: column; gap: 10px; }
+  .nc-footer-cta-wrapper .nc-hxl { padding-top: 160px; }
+}
+
+/* ---------- Кастомный курсор ---------- */
+#uniqueCursor {
+  position: fixed; left: 0; top: 0; z-index: 99; pointer-events: none;
+  width: 46px; height: 24px; margin: -12px 0 0 -23px;
+  background: var(--blue); color: var(--white); border: 1.5px solid var(--white);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; letter-spacing: 0; line-height: 1;
+  transform: scale(0); transition: transform .3s var(--ease-out);
+}
+.nc-articles-wrapper { cursor: none; }
+.nc-articles-wrapper.articles-dragging { cursor: none; }
+#uniqueCursor.is-visible { transform: scale(1); }
+#uniqueCursor.is-small { width: 14px; height: 14px; margin: -7px 0 0 -7px; font-size: 0; }
+
+/* ---------- Видеоплеер ---------- */
+.nc-video-player {
+  position: fixed; inset: 0; z-index: 20; background: var(--black); color: var(--white);
+  clip-path: inset(0 100% 0 0); transition: clip-path .9s var(--ease-out);
+  visibility: hidden;
+}
+.nc-video-player.is-open { clip-path: inset(0 0 0 0); visibility: visible; }
+.nc-video-player video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
+.nc-film-info-bar { position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: flex-end; padding: 40px; gap: 40px; z-index: 2; }
+.player-progress { flex: 1; height: 2px; background: #fff3; position: relative; cursor: pointer; align-self: center; }
+.player-progress-fill { position: absolute; left: 0; top: 50%; height: 14px; transform: translateY(-50%); background: var(--blue); width: 0; }
+.nc-close { background: none; border: 0; color: var(--white); font: inherit; cursor: pointer; display: flex; align-items: center; gap: 12px; }
+.nc-close svg { width: 32px; }
+
+/* ---------- Скринсейвер (через 40 сек бездействия) ---------- */
+#NCScreenSaver {
+  position: fixed; inset: 0; z-index: 33; background: var(--blue); opacity: 0;
+  pointer-events: none; transition: opacity .6s ease; overflow: hidden;
+}
+#NCScreenSaver.is-active { opacity: 1; pointer-events: auto; }
+#NCLogoScreenSaver { position: absolute; left: 0; top: 0; width: 300px; }
+
+/* Подсветка набирается курсивом, как в оригинале */
+.nc-highlight { font-family: var(--font-italic); font-style: italic; letter-spacing: -.02em; }
+/* Ссылки футера — в правой половине */
+.footer-links-col { grid-column: 7 / span 6; }
+@media (max-width: 768px) { .footer-links-col { grid-column: span 6; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .nc-scroll-track { animation: none; }
+}
